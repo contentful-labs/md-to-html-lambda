@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Contentful &#x2764;&#xFE0F;'s API Gateway</title>
+    <link rel="stylesheet" href="writ.min.css">
+    <style type="text/css">
+      .tutorial > h1:first-child {
+        font-size: 2.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="contentful.min.js"></script>
+    <script>(function () {
+      var client = contentful.createClient({
+        host: 'xfdge7afx6.execute-api.eu-west-1.amazonaws.com',
+        space: 'oqp9lwuwktba',
+        accessToken: 'baba02224a4b6490faa4fff4785d5c9d655ffdfd75b91c617344ed24619b837f'
+      })
+
+      var ContentTypes = { Tutorial: '2jGJdAHwneiQ6SEkUu0cWu' }
+      
+      client.entries({ content_type: ContentTypes.Tutorial }).then(function (tutorials) {
+        document.body.innerHTML = tutorials.map(function (tutorial) {
+          return '<article><h1>' + tutorial.fields.title + '</h1>' + tutorial.fields.body + '</article>'
+        }).join('\n')
+      }).catch(function (error) {
+        var pre = document.createElement('pre')
+        pre.innerText = error.stack
+        document.body.appendChild(pre)
+      })
+    })()</script>
+  </body>
+</html>
