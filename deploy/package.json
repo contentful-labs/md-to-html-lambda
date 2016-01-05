@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "api-gateway-tools": "contentful-labs/api-gateway-tools",
-    "aws-sdk": "^2.1.46",
+    "aws-sdk": "^2.2.26",
     "babel": "^5.8.23",
     "hat": "0.0.3"
   }
