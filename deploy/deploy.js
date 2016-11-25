@@ -93,7 +93,7 @@ async function main ({
     resourceId: resource.id,
     selectionPattern: null,
     statusCode: '200',
-    responseTemplates: { 'application~1json': '' },
+    responseTemplates: { 'application/json': '' },
     responseParameters: {
       'method.response.header.Access-Control-Allow-Origin': "'*'"
     }
